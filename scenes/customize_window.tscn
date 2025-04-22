@@ -1,0 +1,131 @@
+[gd_scene load_steps=9 format=3 uid="uid://q0bll48vjbh5"]
+
+[ext_resource type="Script" path="res://scenes/customize_window.gd" id="1_p60tw"]
+[ext_resource type="FontFile" uid="uid://d15asrafrelve" path="res://fonts/Rubik/static/Rubik-Bold.ttf" id="1_uctee"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_uyw7o"]
+bg_color = Color(0.933333, 0.933333, 0.933333, 1)
+border_width_left = 7
+border_width_top = 7
+border_width_right = 7
+border_width_bottom = 7
+border_color = Color(0.709804, 0.709804, 0.709804, 1)
+corner_radius_top_left = 12
+corner_radius_top_right = 12
+corner_radius_bottom_right = 12
+corner_radius_bottom_left = 12
+
+[sub_resource type="Theme" id="Theme_le17w"]
+Panel/styles/panel = SubResource("StyleBoxFlat_uyw7o")
+
+[sub_resource type="LabelSettings" id="LabelSettings_ncod0"]
+font = ExtResource("1_uctee")
+font_size = 48
+font_color = Color(0.192157, 0.0941176, 0.784314, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_xepci"]
+bg_color = Color(0.192157, 0.0941176, 0.784314, 1)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(0.192157, 0.0941176, 0.784314, 1)
+corner_radius_top_left = 21
+corner_radius_top_right = 21
+corner_radius_bottom_right = 21
+corner_radius_bottom_left = 21
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_m78sx"]
+bg_color = Color(0.933333, 0.933333, 0.933333, 1)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(0.6, 0.6, 0.6, 1)
+corner_radius_top_left = 12
+corner_radius_top_right = 12
+corner_radius_bottom_right = 12
+corner_radius_bottom_left = 12
+
+[sub_resource type="Theme" id="Theme_vtxlc"]
+HSlider/styles/slider = SubResource("StyleBoxFlat_xepci")
+Label/colors/font_color = Color(0.192157, 0.0941176, 0.784314, 1)
+Label/font_sizes/font_size = 22
+LineEdit/colors/font_color = Color(0.192157, 0.0941176, 0.784314, 1)
+LineEdit/colors/font_placeholder_color = Color(0.192157, 0.0941176, 0.784314, 0.635294)
+LineEdit/font_sizes/font_size = 26
+LineEdit/styles/normal = SubResource("StyleBoxFlat_m78sx")
+
+[node name="CustomizeWindow" type="Panel"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -395.0
+offset_top = -199.0
+offset_right = 350.0
+offset_bottom = 199.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = SubResource("Theme_le17w")
+script = ExtResource("1_p60tw")
+
+[node name="Title" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -127.5
+offset_top = 3.0
+offset_right = 127.5
+offset_bottom = 60.0
+grow_horizontal = 2
+text = "Customize"
+label_settings = SubResource("LabelSettings_ncod0")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = 24.0
+offset_top = -125.0
+offset_right = -23.0
+offset_bottom = 125.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = SubResource("Theme_vtxlc")
+
+[node name="Position" type="LineEdit" parent="VBoxContainer"]
+layout_mode = 2
+placeholder_text = "Position"
+caret_blink = true
+
+[node name="KnowText" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+text = "Knowledge level: (0%)"
+
+[node name="Knowledge" type="HSlider" parent="VBoxContainer"]
+layout_mode = 2
+
+[node name="NiveauText" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+text = "Speech niveau: (0%)"
+
+[node name="Niveau" type="HSlider" parent="VBoxContainer"]
+layout_mode = 2
+
+[node name="Style" type="LineEdit" parent="VBoxContainer"]
+layout_mode = 2
+placeholder_text = "Describe their speech style (aggressive, polite,...)"
+caret_blink = true
+
+[node name="DStyle" type="LineEdit" parent="VBoxContainer"]
+layout_mode = 2
+placeholder_text = "Describe their debate style (logic, populism,rethoric,...)"
+caret_blink = true
+
+[connection signal="value_changed" from="VBoxContainer/Knowledge" to="." method="_on_knowledge_value_changed"]
+[connection signal="value_changed" from="VBoxContainer/Niveau" to="." method="_on_niveau_value_changed"]

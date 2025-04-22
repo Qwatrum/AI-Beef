@@ -1,0 +1,14 @@
+[gd_scene load_steps=2 format=3 uid="uid://bosxrhx5finye"]
+
+[ext_resource type="Texture2D" uid="uid://cvsln1nd872o6" path="res://assets/podium.png" id="1_2obgs"]
+
+[node name="PodiumL" type="Node2D"]
+scale = Vector2(2.2, 2.2)
+
+[node name="Podium" type="Sprite2D" parent="."]
+texture = ExtResource("1_2obgs")
+flip_h = true
+
+[node name="Polygon2D" type="Polygon2D" parent="."]
+color = Color(0.341176, 0, 0.945098, 1)
+polygon = PackedVector2Array(-130.455, -77.2727, 7.72727, -111.364, 129.091, -112.273, 128.636, -154.091, 6.81818, -154.091, -129.091, -125)

@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://bbqwfb0wp0ktb"]
+
+[ext_resource type="FontFile" uid="uid://bsdutbrstdio7" path="res://fonts/Rubik/static/Rubik-Medium.ttf" id="1_5a12i"]
+[ext_resource type="Script" path="res://scenes/argument_text.gd" id="2_b66f4"]
+
+[node name="ArgumentText" type="Label"]
+custom_minimum_size = Vector2(600, 120)
+offset_right = 1153.0
+offset_bottom = 202.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("1_5a12i")
+theme_override_font_sizes/font_size = 22
+autowrap_mode = 3
+script = ExtResource("2_b66f4")

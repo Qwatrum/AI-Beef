@@ -1,0 +1,307 @@
+[gd_scene load_steps=18 format=3 uid="uid://c8l14ec0drv8t"]
+
+[ext_resource type="FontFile" uid="uid://bsdutbrstdio7" path="res://fonts/Rubik/static/Rubik-Medium.ttf" id="1_lf0bb"]
+[ext_resource type="PackedScene" uid="uid://hu2kex4mnpfp" path="res://scenes/person.tscn" id="2_6ugvy"]
+[ext_resource type="Script" path="res://scenes/debate.gd" id="2_rhrou"]
+[ext_resource type="PackedScene" uid="uid://dva2ugnlawvp3" path="res://scenes/person2.tscn" id="3_1psvl"]
+[ext_resource type="PackedScene" uid="uid://byqtn300l3dek" path="res://scenes/ai.tscn" id="4_70alp"]
+[ext_resource type="Texture2D" uid="uid://cxu66cs6a13kq" path="res://assets/Logo.png" id="5_0lt1u"]
+[ext_resource type="PackedScene" uid="uid://q0bll48vjbh5" path="res://scenes/customize_window.tscn" id="6_s58c4"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_h3avq"]
+bg_color = Color(0.933333, 0.933333, 0.933333, 1)
+border_width_left = 6
+border_width_top = 6
+border_width_right = 6
+border_width_bottom = 6
+border_color = Color(0.4, 0.4, 0.4, 1)
+corner_radius_top_left = 21
+corner_radius_top_right = 21
+corner_radius_bottom_right = 21
+corner_radius_bottom_left = 21
+
+[sub_resource type="Theme" id="Theme_y4llb"]
+Button/colors/font_color = Color(0.2, 0.254902, 0.611765, 1)
+Button/colors/font_hover_color = Color(0.192157, 0.623529, 0.784314, 1)
+Button/font_sizes/font_size = 48
+Button/fonts/font = ExtResource("1_lf0bb")
+Button/styles/hover = SubResource("StyleBoxFlat_h3avq")
+Button/styles/normal = SubResource("StyleBoxFlat_h3avq")
+
+[sub_resource type="LabelSettings" id="LabelSettings_7fncx"]
+font = ExtResource("1_lf0bb")
+font_size = 128
+font_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_m78sx"]
+bg_color = Color(0.933333, 0.933333, 0.933333, 1)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(0.6, 0.6, 0.6, 1)
+corner_radius_top_left = 12
+corner_radius_top_right = 12
+corner_radius_bottom_right = 12
+corner_radius_bottom_left = 12
+
+[sub_resource type="Theme" id="Theme_lwyig"]
+LineEdit/colors/font_color = Color(0.192157, 0.0941176, 0.784314, 1)
+LineEdit/colors/font_placeholder_color = Color(0.192157, 0.0941176, 0.784314, 0.635294)
+LineEdit/font_sizes/font_size = 32
+LineEdit/styles/normal = SubResource("StyleBoxFlat_m78sx")
+
+[sub_resource type="LabelSettings" id="LabelSettings_mepwg"]
+font = ExtResource("1_lf0bb")
+font_size = 32
+font_color = Color(0.192157, 0.0941176, 0.784314, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_ddigb"]
+font = ExtResource("1_lf0bb")
+font_size = 30
+font_color = Color(0.192157, 0.0941176, 0.784314, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4tpnd"]
+bg_color = Color(0.534456, 0.977082, 0.289894, 1)
+border_width_left = 3
+border_width_top = 3
+border_width_right = 3
+border_width_bottom = 3
+border_color = Color(0.349395, 0.659371, 0.175548, 1)
+corner_radius_top_left = 21
+corner_radius_top_right = 21
+corner_radius_bottom_right = 21
+corner_radius_bottom_left = 21
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_f7mlm"]
+bg_color = Color(0.534456, 0.977082, 0.289894, 1)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(0.349395, 0.659371, 0.175548, 1)
+corner_radius_top_left = 21
+corner_radius_top_right = 21
+corner_radius_bottom_right = 21
+corner_radius_bottom_left = 21
+
+[sub_resource type="Theme" id="Theme_wwjot"]
+Button/colors/font_color = Color(0.349395, 0.659371, 0.175548, 1)
+Button/colors/font_hover_color = Color(0.424757, 0.805889, 0.204801, 1)
+Button/font_sizes/font_size = 36
+Button/fonts/font = ExtResource("1_lf0bb")
+Button/styles/hover = SubResource("StyleBoxFlat_4tpnd")
+Button/styles/normal = SubResource("StyleBoxFlat_f7mlm")
+
+[node name="Debate" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = SubResource("Theme_y4llb")
+script = ExtResource("2_rhrou")
+
+[node name="Background" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.933333, 0.933333, 0.933333, 1)
+
+[node name="Person" parent="." instance=ExtResource("2_6ugvy")]
+visible = false
+position = Vector2(1060, 386)
+scale = Vector2(0.25, 0.25)
+
+[node name="Label" type="Label" parent="Person"]
+offset_left = -410.0
+offset_top = 830.0
+offset_right = -241.0
+offset_bottom = 982.0
+text = "(2)"
+label_settings = SubResource("LabelSettings_7fncx")
+
+[node name="AI" parent="Person" instance=ExtResource("4_70alp")]
+
+[node name="Person2" parent="." instance=ExtResource("3_1psvl")]
+visible = false
+position = Vector2(85, 386)
+scale = Vector2(0.25, 0.25)
+
+[node name="Label" type="Label" parent="Person2"]
+offset_left = 243.333
+offset_top = 843.333
+offset_right = 412.333
+offset_bottom = 995.333
+text = "(1)"
+label_settings = SubResource("LabelSettings_7fncx")
+
+[node name="AI" parent="Person2" instance=ExtResource("4_70alp")]
+
+[node name="Logo" type="TextureRect" parent="."]
+layout_mode = 1
+offset_right = 1114.0
+offset_bottom = 277.0
+scale = Vector2(0.3, 0.3)
+texture = ExtResource("5_0lt1u")
+expand_mode = 1
+
+[node name="TopicElements" type="VBoxContainer" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -210.0
+offset_top = -109.0
+offset_right = 210.0
+offset_bottom = 109.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = SubResource("Theme_lwyig")
+theme_override_constants/separation = 16
+
+[node name="TopicChoose" type="Label" parent="TopicElements"]
+layout_mode = 2
+text = "1. Choose a topic
+A good topic should be short,
+and easy to find a 
+pro & contra side."
+label_settings = SubResource("LabelSettings_mepwg")
+horizontal_alignment = 1
+
+[node name="Topic" type="LineEdit" parent="TopicElements"]
+layout_mode = 2
+placeholder_text = "Your Topic"
+max_length = 48
+context_menu_enabled = false
+caret_blink = true
+
+[node name="NextT" type="Button" parent="TopicElements"]
+layout_mode = 2
+text = "Next"
+
+[node name="CustomizeWindow" parent="." instance=ExtResource("6_s58c4")]
+visible = false
+layout_mode = 1
+offset_left = -372.5
+offset_right = 372.5
+title_add = " 1"
+
+[node name="CustomizeWindow2" parent="." instance=ExtResource("6_s58c4")]
+visible = false
+layout_mode = 1
+offset_left = -372.5
+offset_right = 372.5
+title_add = " 2"
+
+[node name="Next" type="Button" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -90.0
+offset_top = -121.0
+offset_right = 90.0
+offset_bottom = -52.0
+grow_horizontal = 2
+grow_vertical = 0
+text = "Next"
+
+[node name="TopicTitle" type="Label" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -325.0
+offset_top = 5.0
+offset_right = -5.0
+offset_bottom = 43.0
+grow_horizontal = 0
+text = "Topic: "
+label_settings = SubResource("LabelSettings_ddigb")
+horizontal_alignment = 2
+
+[node name="ScrollContainer" type="ScrollContainer" parent="."]
+visible = false
+layout_mode = 2
+offset_left = 224.0
+offset_top = 97.0
+offset_right = 939.0
+offset_bottom = 587.0
+horizontal_scroll_mode = 0
+
+[node name="Arguments" type="VBoxContainer" parent="ScrollContainer"]
+layout_mode = 2
+theme_override_constants/separation = 32
+
+[node name="NextArgument" type="Button" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -140.5
+offset_top = -59.0
+offset_right = 140.5
+offset_bottom = -4.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_font_sizes/font_size = 32
+text = "Next argument"
+
+[node name="Back" type="Button" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -140.0
+offset_top = -66.0
+offset_right = 141.0
+offset_bottom = -4.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_font_sizes/font_size = 32
+text = "Back to menu"
+
+[node name="win1" type="Button" parent="."]
+visible = false
+layout_mode = 0
+offset_left = 191.0
+offset_top = 591.0
+offset_right = 332.0
+offset_bottom = 642.0
+theme = SubResource("Theme_wwjot")
+text = "Win"
+
+[node name="win2" type="Button" parent="."]
+visible = false
+layout_mode = 0
+offset_left = 808.0
+offset_top = 591.0
+offset_right = 949.0
+offset_bottom = 642.0
+theme = SubResource("Theme_wwjot")
+text = "Win"
+
+[connection signal="button_down" from="TopicElements/NextT" to="." method="_on_next_t_button_down"]
+[connection signal="button_down" from="Next" to="." method="_on_next_button_down"]
+[connection signal="button_down" from="NextArgument" to="." method="_on_next_argument_button_down"]
+[connection signal="button_down" from="Back" to="." method="_on_back_button_down"]
+[connection signal="button_down" from="win1" to="." method="_on_win_1_button_down"]
+[connection signal="button_down" from="win2" to="." method="_on_win_2_button_down"]
