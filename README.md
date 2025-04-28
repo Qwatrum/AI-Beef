@@ -9,7 +9,7 @@
 - Or watch this video
 
 
-![AI Beef](https://hc-cdn.hel1.your-objectstorage.com/s/v3/49c8c32f0af75b2f8bf95e78fa8c01f7ca791278_0428.mp4)
+![AI Beef](video.mp4)
 
 
 ## How to play:
