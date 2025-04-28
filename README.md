@@ -9,7 +9,9 @@
 - Or watch this video
 
 
-![AI Beef](video.mp4)
+
+https://github.com/user-attachments/assets/a2b88d75-77bf-4c4c-8248-3f708d18fd0e
+
 
 
 ## How to play:
