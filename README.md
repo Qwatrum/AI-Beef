@@ -6,6 +6,11 @@
 ## Get started:
 - Play it [here](https://qwatrum.itch.io/ai-beef)
 - Or clone the repo and load it in Godot by yourself
+- Or watch this video
+
+
+![AI Beef](https://hackclub.slack.com/archives/C016DEDUL87/p1745857717757949?thread_ts=1745857713.071339&cid=C016DEDUL87)
+
 
 ## How to play:
 - Start the show and choose any topic
